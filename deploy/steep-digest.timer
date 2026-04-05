@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Steep newsletter digest daily (UTC)
+
+[Timer]
+# VM clock: keep host in UTC, or change this to your local expectation explicitly.
+OnCalendar=*-*-* 06:30:00
+Persistent=true
+Unit=steep-digest.service
+
+[Install]
+WantedBy=timers.target

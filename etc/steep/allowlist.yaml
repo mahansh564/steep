@@ -1,0 +1,10 @@
+# Copy to a path on the server (e.g. /etc/steep/allowlist.yaml) and set ALLOWLIST_PATH.
+# Each entry is either:
+#   - full address: "newsletter@company.com"
+#   - domain shorthand: "@substack.com" (matches *@substack.com)
+#   - bare domain: "company.com" (same as @company.com)
+
+senders:
+  - "newsletter@example.com"
+  - "@substack.com"
+  # - "another.sender@domain.org"
