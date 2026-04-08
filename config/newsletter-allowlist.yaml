@@ -1,0 +1,12 @@
+# Allowlisted newsletter senders. Matching is done with Gmail `from:` search.
+#
+# - Plain strings with "@" are treated as full email addresses.
+# - Strings starting with "@" are domains (matches mail from anyone at that domain).
+# - Plain strings without "@" are treated as domain names (e.g. substack.com).
+#
+# Edit this file, then run `steep-digest run` (or your NanoClaw scheduled task).
+
+allowlist:
+  # - "newsletter@example.com"
+  # - "@substack.com"
+  # - "beehiiv.com"

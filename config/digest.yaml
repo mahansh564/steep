@@ -1,0 +1,21 @@
+# Operational settings for `steep-digest run`.
+# Paths below are relative to the repo root unless absolute.
+
+# Where to store the Gmail cursor (last successful internalDate ms). Gitignored by default.
+cursor_path: state/digest-cursor.json
+
+# When there is no cursor yet, only pull allowlisted mail from this many days back.
+bootstrap_days: 7
+
+# Path to your NanoClaw group CLAUDE.md (or any file) that defines MUST KNOW vs fluff for you.
+# Use an absolute path on the machine that runs the digest.
+reader_claude_md: null
+
+# Recipient of the digest email (usually your address).
+digest_to_email: null
+
+# Optional explicit subject template. Tokens: {date}, {run_id}
+# subject_template: "Steep digest — {date} ({run_id})"
+
+# Notes for operators (not read by the CLI):
+# schedule_local: "09:00 daily in TZ of host (set TZ env for NanoClaw)"

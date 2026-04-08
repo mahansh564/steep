@@ -131,12 +131,13 @@ flowchart LR
 
 ## 12. Acceptance criteria (v1)
 
-- [ ] Scheduled NanoClaw task runs on the chosen cadence.
-- [ ] Only allowlisted senders contribute items.
-- [ ] Digest has three sections: **MUST KNOW**, **INTERESTING FOR ME**, **FLUFF**.
-- [ ] **Gmail** delivery is a **sent** message; **Telegram** receives the digest.
-- [ ] Cursor advances **only** after both deliveries succeed; after a successful run, no duplicate processing of the same Gmail messages.
-- [ ] First run respects **bootstrap cap**.
+- [x] **Implementation:** `steep-digest` CLI in this repo (NanoClaw runs it on a schedule).
+- [ ] Scheduled NanoClaw task runs on the chosen cadence (operator setup).
+- [x] Only allowlisted senders contribute items.
+- [x] Digest has three sections: **MUST KNOW**, **INTERESTING FOR ME**, **FLUFF**.
+- [x] **Gmail** delivery is a **sent** message; **Telegram** receives the digest.
+- [x] Cursor advances **only** after both deliveries succeed; after a successful run, no duplicate processing of the same Gmail messages.
+- [x] First run respects **bootstrap cap**.
 
 ## 13. Revision history
 
