@@ -72,7 +72,12 @@ def _parse_json_object(text: str) -> dict[str, Any]:
 def build_digest_items(reader_md: str, messages: list[IngestedMessage]) -> list[DigestItem]:
     if not messages:
         return []
-    client = Anthropic()
+    base_url = os.environ.get("ANTHROPIC_BASE_URL")
+    if base_url:
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "nanoclaw-proxy")
+        client = Anthropic(api_key=api_key, base_url=base_url)
+    else:
+        client = Anthropic()
     model = os.environ.get("STEEP_ANTHROPIC_MODEL", DEFAULT_MODEL)
     user_content = (
         "READER_CONTEXT:\n"

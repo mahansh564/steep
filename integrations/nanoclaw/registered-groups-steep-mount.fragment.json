@@ -1,0 +1,11 @@
+{
+  "containerConfig": {
+    "additionalMounts": [
+      {
+        "hostPath": "/ABSOLUTE/PATH/TO/steep",
+        "containerPath": "steep",
+        "readonly": false
+      }
+    ]
+  }
+}

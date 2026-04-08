@@ -2,7 +2,17 @@
 
 Personal newsletter digest: pull allowlisted mail from **Gmail**, classify into **MUST KNOW / INTERESTING FOR ME / FLUFF** with **Claude** using your **CLAUDE.md** as the reader profile, then **send** the combined digest via **Gmail** and **Telegram**.
 
-Designed to run on a schedule (e.g. **NanoClaw** daily task) or from cron.
+**NanoClaw** is included as a **git submodule** at [`nanoclaw/`](nanoclaw/). Monorepo wiring (mount allowlist, Docker layer with Python, scheduled task registration) lives in [`integrations/nanoclaw/README.md`](integrations/nanoclaw/README.md).
+
+Designed to run on a **NanoClaw** scheduled task (recommended) or standalone / cron.
+
+## Clone (with NanoClaw submodule)
+
+```bash
+git clone --recurse-submodules https://github.com/YOU/steep.git
+# or after a normal clone:
+git submodule update --init
+```
 
 ## Quick start
 

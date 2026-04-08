@@ -1,0 +1,11 @@
+{
+  "allowedRoots": [
+    {
+      "path": "/ABSOLUTE/PATH/TO/steep",
+      "allowReadWrite": true,
+      "description": "Monorepo root (contains nanoclaw/ submodule); mount into agent for steep-digest."
+    }
+  ],
+  "blockedPatterns": [],
+  "nonMainReadOnly": false
+}

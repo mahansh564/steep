@@ -1,0 +1,31 @@
+# NanoClaw agent image with Python so scheduled task scripts can run `steep-digest`
+# without hitting the LLM (wakeAgent: false).
+#
+# 1. Build the stock NanoClaw image first (from nanoclaw submodule):
+#      cd nanoclaw/container && ./build.sh
+# 2. Build this layer from the steep repo root:
+#      docker build -f integrations/container/Dockerfile.steep-agent -t nanoclaw-agent-steep:latest .
+#
+# 3. Run NanoClaw with:
+#      CONTAINER_IMAGE=nanoclaw-agent-steep:latest
+#
+# Python dependencies match pyproject.toml so `PYTHONPATH=src python3 -m steep_digest` works
+# against the mounted repo without `pip install -e` each run.
+
+FROM nanoclaw-agent:latest
+
+USER root
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends python3 python3-pip \
+ && rm -rf /var/lib/apt/lists/* \
+ && python3 -m pip install --break-system-packages --no-cache-dir \
+      "google-api-python-client>=2.136.0" \
+      "google-auth-oauthlib>=1.2.0" \
+      "google-auth-httplib2>=0.2.0" \
+      "anthropic>=0.42.0" \
+      "httpx>=0.27.0" \
+      "html2text>=2024.2.26" \
+      "pyyaml>=6.0.1" \
+      "python-dotenv>=1.0.1"
+
+USER node

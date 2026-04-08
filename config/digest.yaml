@@ -7,9 +7,9 @@ cursor_path: state/digest-cursor.json
 # When there is no cursor yet, only pull allowlisted mail from this many days back.
 bootstrap_days: 7
 
-# Path to your NanoClaw group CLAUDE.md (or any file) that defines MUST KNOW vs fluff for you.
-# Use an absolute path on the machine that runs the digest.
-reader_claude_md: null
+# Reader profile: NanoClaw main group memory (monorepo layout).
+# For other layouts, set an absolute path or use STEEP_READER_CLAUDE_MD.
+reader_claude_md: nanoclaw/groups/main/CLAUDE.md
 
 # Recipient of the digest email (usually your address).
 digest_to_email: null

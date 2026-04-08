@@ -1,9 +1,11 @@
 # NanoClaw runbook — Steep digest
 
+> **Monorepo:** NanoClaw lives in `nanoclaw/` (submodule). Full wiring: **[integrations/nanoclaw/README.md](../integrations/nanoclaw/README.md)**.
+
 ## What runs where
 
-- **NanoClaw** triggers a **scheduled task** (recommended: daily **09:00** in your intended timezone — set host **`TZ`** or equivalent).
-- The task should invoke the **CLI** in this repo, not re-implement the pipeline in the agent, so behavior stays deterministic and testable.
+- **NanoClaw** triggers a **scheduled task** (recommended: daily **09:00** — set NanoClaw **`TZ`**).
+- The task **`script`** runs **`steep-digest`** in the container and ends with **`{"wakeAgent": false}`** so no extra Claude turn runs for that tick.
 
 ## Prerequisites on the host
 
