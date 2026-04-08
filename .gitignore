@@ -9,6 +9,7 @@ token.json
 .env.*
 !.env.example
 state.json
+state/
 *.pyc
 __pycache__/
 .pytest_cache/
